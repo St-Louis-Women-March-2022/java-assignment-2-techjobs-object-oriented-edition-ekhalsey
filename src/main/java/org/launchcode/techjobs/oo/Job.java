@@ -38,7 +38,7 @@ public class Job {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Job job = (Job) o;
-        return id == job.id;
+        return getId() == job.getId();
     }
 
     @Override
