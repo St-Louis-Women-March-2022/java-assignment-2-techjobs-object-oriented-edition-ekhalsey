@@ -62,9 +62,7 @@ public class Job {
         return employer;
     }
 
-    public Location getLocation() {
-        return location;
-    }
+    public Location getLocation() { return location; }
 
     public PositionType getPositionType() {
         return positionType;
@@ -93,5 +91,17 @@ public class Job {
     public void setCoreCompetency(CoreCompetency coreCompetency) {
         this.coreCompetency = coreCompetency;
     }
-}
+
+   @Override
+    public String toString(){
+       return "\n" +
+                "\nID: " + this.getId() +
+                "\nName: " + this.getName() +
+                "\nEmployer: " + this.getEmployer().getValue() + //whattt
+                "\nLocation: " + this.getLocation() +
+                "\nPosition Type: " + this.getPositionType() +
+                "\nCore Competency: " + this.getCoreCompetency() +
+                "\n";
+    }
+ }
 

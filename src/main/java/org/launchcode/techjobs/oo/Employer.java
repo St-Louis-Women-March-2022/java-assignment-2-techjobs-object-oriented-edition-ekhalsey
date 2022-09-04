@@ -49,7 +49,10 @@ public class Employer {
     }
 
     public void setValue(String value) {
-        this.value = value;
+//        if(value == null) {
+//            this.value = "Data not available";
+//        } else
+            this.value = value;
     }
 
 }
