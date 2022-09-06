@@ -22,6 +22,9 @@ public class Employer {
 
     @Override
     public String toString() {
+        if(this.value == null || this.value == "") {
+            return "Data not available";
+        }
         return value;
     }
 
@@ -48,11 +51,6 @@ public class Employer {
         return value;
     }
 
-    public void setValue(String value) {
-//        if(value == null) {
-//            this.value = "Data not available";
-//        } else
-            this.value = value;
-    }
+    public void setValue(String value) { this.value = value; }
 
 }

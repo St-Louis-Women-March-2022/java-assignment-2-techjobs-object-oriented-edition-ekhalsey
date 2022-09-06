@@ -95,12 +95,12 @@ public class Job {
    @Override
     public String toString(){
        return "\n" +
-                "\nID: " + this.getId() +
+                "ID: " + this.getId() +
                 "\nName: " + this.getName() +
-                "\nEmployer: " + this.getEmployer().getValue() + //whattt
-                "\nLocation: " + this.getLocation() +
-                "\nPosition Type: " + this.getPositionType() +
-                "\nCore Competency: " + this.getCoreCompetency() +
+                "\nEmployer: " + this.getEmployer().toString() +
+                "\nLocation: " + this.getLocation().toString() +
+                "\nPosition Type: " + this.getPositionType().toString() +
+                "\nCore Competency: " + this.getCoreCompetency().toString() +
                 "\n";
     }
  }
