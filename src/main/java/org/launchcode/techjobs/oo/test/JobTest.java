@@ -55,43 +55,22 @@ public class JobTest {
         String returnString = testJob.toString();
         System.out.println(returnString);
         assertTrue(returnString.contains("ID: " + testJob.getId()));
-
-
-        assertTrue(returnString.contains("Name: " + testJob.getName()));
-        assertTrue(returnString.contains("Name: Product tester"));
-
-        assertTrue(returnString.contains("Employer: " + testJob.getEmployer()));
-        assertTrue(returnString.contains("Employer: ACME"));
-
-        assertTrue(returnString.contains("Location: " + testJob.getLocation()));
-        assertTrue(returnString.contains("Location: Desert"));
-
-        assertTrue(returnString.contains("Position Type: " + testJob.getPositionType()));
-        assertTrue(returnString.contains("Position Type: Quality control"));
-
-        assertTrue(returnString.contains("Core Competency: " + testJob.getCoreCompetency()));
-        assertTrue(returnString.contains("Core Competency: Persistence"));
+        assertEquals("Name: Product tester", "Name: " + testJob.getName());
+        assertEquals("Employer: ACME", "Employer: " + testJob.getEmployer());
+        assertEquals("Location: Desert","Location: " + testJob.getLocation());
+        assertEquals("Position Type: Quality control","Position Type: " + testJob.getPositionType());
+        assertEquals("Core Competency: Persistence", "Core Competency: " + testJob.getCoreCompetency());
     }
 
     @Test
     public void testToStringHandlesEmptyField() {
         Job testJob = new Job("Product tester", new Employer(""), new Location(""), new PositionType("Quality control"), new CoreCompetency(null));
         String returnString = testJob.toString();
-            System.out.println(returnString);
         assertTrue(returnString.contains("ID: " + testJob.getId()));
-
-        assertTrue(returnString.contains("Name: " + testJob.getName()));
-        assertTrue(returnString.contains("Name: Product tester"));
-
-        assertTrue(returnString.contains("Employer: Data not available"));
-
-        assertTrue((returnString.contains("Location: Data not available")));
-
-        assertTrue((returnString.contains("Position Type: " + testJob.getPositionType())));
-
-        assertTrue((returnString.contains("Core Competency: Data not available")));
-
         assertEquals("Name: Product tester", "Name: " + testJob.getName());
         assertEquals("Employer: Data not available", "Employer: " + testJob.getEmployer());
+        assertEquals("Location: Data not available", "Location: " + testJob.getLocation());
+        assertEquals("Position Type: Quality control","Position Type: " + testJob.getPositionType());
+        assertEquals("Core Competency: Data not available", "Core Competency: " + testJob.getCoreCompetency());
     }
 }
